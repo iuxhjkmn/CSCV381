@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">BMI and Heart Rate Calculator</string>
+    <string name="hint1"><font size="25">Feet</font></string>
+    <string name="hint2"><font size="25">Inches</font></string>
+    <string name="hint3"><font size="25">Pounds (lbs) </font></string>
+    <string name="Calculate"><font size="20">Calculate</font></string>
+    <string name="Clear"><font size="20">Clear</font></string>
+    <string name="heartRate"><font size="20">Calculate Heart Rate</font></string>
+    <string name = "ask_height">How Tall are you?</string>
+    <string name = "title">Let\' calculate your BMI!</string>
+    <string name = "ask_weight">How much do you weight?</string>
+    <string name = "obese">Obese</string>
+    <string name = "overweight">Overweight</string>
+    <string name = "normal">Normal</string>
+    <string name = "underweight">Underweight</string>
+
+</resources>

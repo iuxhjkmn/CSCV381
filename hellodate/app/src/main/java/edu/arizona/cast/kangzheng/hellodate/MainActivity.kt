@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
             //function when user clicks
             (displayDate())//call the function
         }
+        displayDate()
     }
 
     private fun displayDate() {//function created to run the code to get current
