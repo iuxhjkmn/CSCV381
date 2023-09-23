@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Activity is finishing? = ${this.isFinishing}")
     }
 
-    fun calculateBMI(){
+    private fun calculateBMI(){
         val weight = binding.addWeight.text.toString().toFloat()
         val heightFT = binding.addFeet.text.toString().toFloat()
         val heightIN = binding.addInches.text.toString().toFloat()
