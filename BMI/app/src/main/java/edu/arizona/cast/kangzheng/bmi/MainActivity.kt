@@ -59,10 +59,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateBMI(){
-        val weight = binding.addWeight.text.toString().toFloat()
-        val heightFT = binding.addFeet.text.toString().toFloat()
-        val heightIN = binding.addInches.text.toString().toFloat()
-        val heightSUM = ((heightFT*12)+heightIN)
+        bmiViewModel.weight = binding.addWeight.text.toString().toFloat()
+        bmiViewModel.heightFT = binding.addFeet.text.toString().toFloat()
+        bmiViewModel.heightIN = binding.addInches.text.toString().toFloat()
+        bmiViewModel.heightSUM = ((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)
 
         if (weight != null && heightFT != null && heightIN != null){
             val bmi = weight*703/heightSUM.pow(2)
