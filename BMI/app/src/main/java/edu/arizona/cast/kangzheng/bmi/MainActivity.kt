@@ -6,7 +6,6 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import edu.arizona.cast.kangzheng.bmi.databinding.ActivityMainBinding
-import kotlin.math.pow
 
 private const val TAG = "BMIViewModel"
 class MainActivity : AppCompatActivity() {
@@ -25,13 +24,28 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         binding.Calculate.setOnClickListener{
-            calculateBMI()
+            bmiViewModel.weight.value = binding.addWeight.text.toString().toDouble()
+            bmiViewModel.heightFT.value = binding.addFeet.text.toString().toDouble()
+            bmiViewModel.heightIN.value = binding.addInches.text.toString().toDouble()
+            bmiViewModel.textMsg.value = binding.txtMSG.text.toString()
+            //bmiViewModel.bmi = bmiViewModel.weight*703/((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)*
+                    //((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)
+            //var weight = binding.addWeight.text.toString().toInt()
+            bmiViewModel.calculateBMI()
+            displayBMI()
+
         }
+
         binding.Clear.setOnClickListener{
             clearOut()
         }
+        bmiViewModel.calculateBMI()
+
+
     }
+
     override fun onStart() {
         super.onStart()
         Log.d(TAG, "onStart() called")
@@ -58,29 +72,25 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Activity is finishing? = ${this.isFinishing}")
     }
 
-    private fun calculateBMI(){
-        bmiViewModel.weight = binding.addWeight.text.toString().toFloat()
-        bmiViewModel.heightFT = binding.addFeet.text.toString().toFloat()
-        bmiViewModel.heightIN = binding.addInches.text.toString().toFloat()
-        bmiViewModel.heightSUM = ((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)
+    private fun displayBMI(){
 
-        if (weight != null && heightFT != null && heightIN != null){
-            val bmi = weight*703/heightSUM.pow(2)
-            val bmiScore = String.format("%.2f", bmi)
+
+        if (bmiViewModel.weight.value!! != null && bmiViewModel.heightFT.value!! != null && bmiViewModel.heightIN.value!! != null){
+            val bmiScore = String.format("%.2f", bmiViewModel.bmi.value!!)
 
 
             var bmiResult = ""
             var color = 0
             when {
-                bmi <18.5 -> {
+                bmiViewModel.bmi.value!! <18.5 -> {
                     bmiResult="Underweight"
                     color = R.color.underweight
                 }
-                bmi <24.9 -> {
+                bmiViewModel.bmi.value!! <24.9 -> {
                     bmiResult="Normal"
                     color = R.color.normal
                 }
-                bmi <30   -> {
+                bmiViewModel.bmi.value!! <30   -> {
                     bmiResult="Overweight"
                     color = R.color.overweight
                 }
@@ -97,13 +107,14 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
     private  fun clearOut(){
 
         binding.addFeet.text.clear()
         binding.addInches.text.clear()
         binding.addWeight.text.clear()
     }
+
+
 }
 
 
