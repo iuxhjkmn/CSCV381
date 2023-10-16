@@ -23,13 +23,13 @@ class MainActivity : AppCompatActivity() {
         Log.d(TAG, "Inside onCreate, we have a bmiViewModel = $bmiViewModel")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        displayBMI()
 
 
         binding.Calculate.setOnClickListener{
             bmiViewModel.weight.value = binding.addWeight.text.toString().toDouble()
             bmiViewModel.heightFT.value = binding.addFeet.text.toString().toDouble()
             bmiViewModel.heightIN.value = binding.addInches.text.toString().toDouble()
-            bmiViewModel.textMsg.value = binding.txtMSG.text.toString()
             //bmiViewModel.bmi = bmiViewModel.weight*703/((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)*
                     //((bmiViewModel.heightFT*12)+bmiViewModel.heightIN)
             //var weight = binding.addWeight.text.toString().toInt()
@@ -38,11 +38,9 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        binding.Clear.setOnClickListener{
-            clearOut()
-        }
-        bmiViewModel.calculateBMI()
-
+        //binding.Clear.setOnClickListener{
+           // clearOut()
+       // }
 
     }
 
@@ -75,7 +73,7 @@ class MainActivity : AppCompatActivity() {
     private fun displayBMI(){
 
 
-        if (bmiViewModel.weight.value!! != null && bmiViewModel.heightFT.value!! != null && bmiViewModel.heightIN.value!! != null){
+        if (bmiViewModel.weight.value != null && bmiViewModel.heightFT.value != null && bmiViewModel.heightIN.value != null){
             val bmiScore = String.format("%.2f", bmiViewModel.bmi.value!!)
 
 
@@ -107,12 +105,11 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    private  fun clearOut(){
+    //private  fun clearOut(){
 
-        binding.addFeet.text.clear()
-        binding.addInches.text.clear()
-        binding.addWeight.text.clear()
-    }
+       // binding.addFeet.text.clear()
+//        binding.addWeight.text.clear()
+    //}
 
 
 }

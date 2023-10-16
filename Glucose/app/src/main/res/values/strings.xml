@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Glucose</string>
+    <string name = "hint_fasting">Numbers Only</string>
+    <string name = "hint_breakfast">Numbers Only</string>
+    <string name = "hint_lunch">Numbers Only</string>
+    <string name = "hint_dinner">Numbers Only</string>
+    <string name = "label_fasting">Fasting:</string>
+    <string name = "label_breakfast">Breakfast:</string>
+    <string name = "label_lunch">Lunch:</string>
+    <string name = "label_dinner">Dinner:</string>
+    <string name = "label_fasting_cap">FASTING:</string>
+    <string name = "label_breakfast_cap">BREAKFAST:</string>
+    <string name = "label_lunch_cap">LUNCH:</string>
+    <string name = "label_dinner_cap">DINNER:</string>
+    <string name = "label_normal">NORMAL</string>
+    <string name = "label_hypoglycemic">HYPOGLYCEMIC</string>
+    <string name = "label_abnormal">ABNORMAL</string>
+    <string name = "label_isnormal_true">TRUE</string>
+    <string name="label_isnormal_false">FALSE</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_history">History</string>
+</resources>
