@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GlucoseMonitor</string>
+    <string name="fasting_label">Fasting: </string>
+    <string name="breakfast_label">Breakfast: </string>
+    <string name="lunch_label">Lunch: </string>
+    <string name="dinner_label">Dinner: </string>
+    <string name="input_hint">Number only! </string>
+    <string name="clear_button">Clear</string>
+    <string name="history_button">History</string>
+    <string name="isNormal_label">Normal</string>
+</resources>

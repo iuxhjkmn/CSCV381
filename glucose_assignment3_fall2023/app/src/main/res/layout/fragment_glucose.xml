@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/scrollingView"
+    android:scrollbars="vertical"
+
+    >
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/glucose_date"
+        style="@style/dateButton"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        style="@style/tableLayout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/glucose_date">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/labelItem"
+                android:text="@string/fasting_label" />
+
+            <EditText
+                android:id="@+id/fasting_box"
+                style="@style/textBox" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+
+                style="@style/labelItem"
+                android:text="@string/breakfast_label" />
+
+            <EditText
+                android:id="@+id/breakfast_box"
+                style="@style/textBox" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/labelItem"
+                android:text="@string/lunch_label" />
+
+            <EditText
+                android:id="@+id/lunch_box"
+                style="@style/textBox" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/labelItem"
+                android:text="@string/dinner_label" />
+
+            <EditText
+                android:id="@+id/dinner_box"
+                style="@style/textBox" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/msg_box"
+        style="?android:listSeparatorTextViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+
+
+        android:paddingTop="5dp"
+        android:scrollHorizontally="false"
+        android:scrollbars="vertical"
+        android:singleLine="false"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"/>
+
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        style="@style/tableLayout"
+
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/msg_box">
+
+
+        <TableRow>
+
+            <Button
+                android:id="@+id/clear_button"
+                style="@style/actionButton"
+                android:layout_weight="1"
+                android:text="@string/clear_button" />
+            <!--style="?android:attr/buttonBarButtonStyle"/> -->
+
+
+            <Button
+                android:id="@+id/history_button"
+                style="@style/actionButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/history_button" />
+            <!--style="?android:attr/buttonBarButtonStyle" -->
+
+
+        </TableRow>
+
+    </TableLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
